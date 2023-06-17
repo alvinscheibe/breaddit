@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Icons } from '@/components/icons';
-import { buttonVariants } from '@/components/ui/Button';
+import { buttonVariants } from '@/components/ui/button';
 
 const Navbar = () => {
   return (
