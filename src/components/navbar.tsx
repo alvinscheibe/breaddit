@@ -3,7 +3,6 @@ import { Icons } from '@/components/icons';
 import { buttonVariants } from '@/components/ui/button';
 import { getAuthSession } from '@/lib/auth';
 import UserAccountNav from '@/components/user-account-nav';
-import { mockSession } from 'next-auth/client/__tests__/helpers/mocks';
 
 const Navbar = async () => {
   const session = await getAuthSession();
