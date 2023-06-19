@@ -4,6 +4,8 @@ import { db } from '@/lib/db';
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import SubscribeLeaveToggle from '@/components/subscribe-leave-toggle';
+import Link from 'next/link';
+import { buttonVariants } from '@/components/ui/button';
 
 const Layout = async ({ children, params: { slug } }: { children: React.ReactNode, params: { slug: string } }) => {
   const session = await getAuthSession();
@@ -95,6 +97,8 @@ const Layout = async ({ children, params: { slug } }: { children: React.ReactNod
               {subreddit.creatorId !== session?.user?.id ? (
                 <SubscribeLeaveToggle subredditId={subreddit.id} subredditName={subreddit.name} isSubscribed={isSubscribed} />
               ) : null}
+
+              <Link href={`/r/${slug}/submit`} className={buttonVariants({ variant: 'outline', className: 'w-full mb-6' })}>Create post</Link>
             </dl>
           </div>
         </div>
