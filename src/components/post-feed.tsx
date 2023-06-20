@@ -8,7 +8,7 @@ import { INFINITE_SCROLLILING_PAGINATION_RESULTS } from '@/config';
 import axios from 'axios';
 import { session } from 'next-auth/core/routes';
 import { useSession } from 'next-auth/react';
-import Post from '@/components/Post';
+import Post from '@/components/post';
 
 interface PostFeedProps {
   initialPosts: ExtentedPost[];
@@ -63,9 +63,23 @@ const PostFeed = ({ initialPosts, subredditName }: PostFeedProps) => {
         const currentVote = post.votes.find((vote) => vote.userId === session?.user?.id);
 
         if (index === posts.length - 1)
-          return <li key={post.id} ref={ref}><Post subredditName={post.subreddit.name} post={post} commentAmount={post.comments.length} /></li>
+          return <li key={post.id} ref={ref}>
+            <Post
+              subredditName={post.subreddit.name}
+              post={post}
+              commentAmount={post.comments.length}
+              currentVote={currentVote}
+              votesAmount={votesAmount}
+            />
+          </li>
         else
-        return <Post subredditName={post.subreddit.name} post={post} commentAmount={post.comments.length} />;
+          return <Post
+            subredditName={post.subreddit.name}
+            post={post}
+            commentAmount={post.comments.length}
+            currentVote={currentVote}
+            votesAmount={votesAmount}
+          />;
       })}
     </ul>
   );
