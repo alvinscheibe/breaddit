@@ -42,7 +42,7 @@ const Post = ({ subredditName, post, commentAmount, votesAmount, currentVote }: 
               Posted by u/{post.author.name}
             </span>
             {' '}
-            {formatTimeToNow(post.createdAt)}
+            {formatTimeToNow(new Date(post.createdAt))}
           </div>
 
           <a href={`/r/${subredditName}/post/${post.id}`} className={''}>
