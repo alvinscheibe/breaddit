@@ -21,7 +21,7 @@ export async function PATCH(req: Request) {
         replyToId
       }
     });
-    
+
     return new Response('OK', { status: 200 });
   } catch (error) {
     if (error instanceof z.ZodError)
