@@ -27,7 +27,7 @@ const renderers = {
 
 const EditorOutput = ({ content }: EditorOutputProps) => {
   return (
-    // @ts-expect-error
+    // @ts-ignore
     <Output
       data={content}
       style={style}
