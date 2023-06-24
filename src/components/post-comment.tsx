@@ -14,6 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useMutation } from '@tanstack/react-query';
 import { CommentRequest } from '@/lib/validators/comment';
 import axios from 'axios';
+import { toast } from '@/hooks/use-toast';
 
 type ExtendedComment = Comment & {
   author: User,
@@ -45,6 +46,17 @@ const PostComment = ({ comment, votesAmount, currentVote, postId }: PostCommentP
       const { data } = await axios.patch('/api/subreddit/post/comment', payload);
 
       return data;
+    },
+    onError: () => {
+      return toast({
+        title: 'There was an error',
+        description: 'There was an error while trying to create your comment. Please try again later.',
+        variant: 'destructive'
+      });
+    },
+    onSuccess: () => {
+      router.refresh();
+      setIsReplying(false);
     }
   });
 
@@ -112,7 +124,6 @@ const PostComment = ({ comment, votesAmount, currentVote, postId }: PostCommentP
                   disabled={input.length === 0}
                   onClick={() => {
                     if (!input) return;
-
                     postComment({ postId, text: input, replyToId: comment.replyToId ?? comment.id })
                   }}
                 >
