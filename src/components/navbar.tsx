@@ -4,6 +4,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { getAuthSession } from '@/lib/auth';
 import UserAccountNav from '@/components/user-account-nav';
 import SearchBar from '@/components/search-bar';
+import { Github } from 'lucide-react';
 
 const Navbar = async () => {
   const session = await getAuthSession();
@@ -18,9 +19,15 @@ const Navbar = async () => {
 
         <SearchBar />
 
-        {session?.user ? (
-          <UserAccountNav user={session.user} />
-        ) : <Link href={'/sign-in'} className={buttonVariants()}>Sign In</Link>}
+        <div className={'flex items-center justify-between'}>
+          <a href={'https://github.com/alvinscheibe/breaddit'} target={'_blank'}>
+            <Github className={'h-8 w-8 sm:h-6 sm:w-6 text-zinc-700 hidden md:block mr-2'} />
+          </a>
+
+          {session?.user ? (
+            <UserAccountNav user={session.user} />
+          ) : <Link href={'/sign-in'} className={buttonVariants()}>Sign In</Link>}
+        </div>
       </div>
     </div>
   );
