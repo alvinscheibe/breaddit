@@ -42,13 +42,13 @@ const Page = () => {
 
         if (error.response?.status === 401)
           return loginToast();
-
-        return toast({
-          title: 'An error occurred',
-          description: 'An unknown error occurred while creating your community. Please try again later.',
-          variant: 'destructive'
-        });
       }
+
+      return toast({
+        title: 'An error occurred',
+        description: 'An unknown error occurred while creating your community. Please try again later.',
+        variant: 'destructive'
+      });
     },
     onSuccess: (data) => {
       router.push(`/r/${data}`);

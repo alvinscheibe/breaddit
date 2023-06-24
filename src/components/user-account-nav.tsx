@@ -45,7 +45,7 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
           <Link href={'/r/create'}>Create community</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild={true}>
-          <Link href={'/setting'}>Settings</Link>
+          <Link href={'/settings'}>Settings</Link>
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />
