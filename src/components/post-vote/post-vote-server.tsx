@@ -32,7 +32,7 @@ const PostVoteServer = async ({ postId, initialAmount, initialVote, getData }: P
     }, 0);
 
     // @ts-ignore
-    _currentVote = post.votes.find((vote) => vote.userId === session.user.id)?.type;
+    _currentVote = post.votes.find((vote) => vote.userId === session?.user?.id)?.type;
   } else {
     _votesAmount = initialAmount!;
     _currentVote = initialVote;
