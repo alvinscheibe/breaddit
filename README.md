@@ -7,7 +7,7 @@
   </p>
 </div>
 
-![Screenshot](https://raw.githubusercontent.com/alvinscheibe/breaddit/main/public/screenshot.png)
+![Screenshot](https://github.com/alvinscheibe/breaddit/blob/main/public/screenshot.png)
 
 ### Build with
 
