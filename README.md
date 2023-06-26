@@ -7,6 +7,8 @@
   </p>
 </div>
 
+![Screenshot](https://raw.githubusercontent.com/alvinscheibe/breaddit/main/public/screenshot.png)
+
 ### Build with
 
 * [Next.js](https://nextjs.org/)
