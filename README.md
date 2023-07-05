@@ -3,7 +3,7 @@
 <div align="center">
   <h3 align="center">🍞 Breaddit - Reddit clone</h3>
   <p align="center">
-    <a href="https://breaddit-app.vercel.app">View Example</a>
+    <a href="https://breaddit-app.vercel.app">View example</a>
   </p>
 </div>
 
